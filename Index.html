@@ -29,9 +29,7 @@
       height: 100%;
       width: 100%;
       position: absolute;
-      flex-direction: column;
       transition: opacity 0.6s;
-      color: #fff;
     }
 
     #entry-image {
@@ -40,17 +38,10 @@
       cursor: pointer;
       border-radius: 50%;
       transition: transform 0.3s;
-      margin-top: 20px;
     }
 
     #entry-image:hover {
       transform: scale(1.05);
-    }
-
-    #visitor-counter {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #aaa;
     }
 
     /* Style for the home page */
@@ -104,7 +95,6 @@
 
   <!-- Entry Page -->
   <div id="entry-page">
-    <div id="visitor-counter">You are visitor number: <span id="visitor-count">1</span></div>
     <img id="entry-image" src="https://cdn.discordapp.com/attachments/837800626645499944/1301998514863345740/IMG_7845.jpg?ex=6726841b&is=6725329b&hm=2d7109d6dbb8cb597990895487d6375f0bee3faeff67f8665bed92b3efdaab64&" alt="Click to Enter">
   </div>
 
@@ -121,22 +111,6 @@
   </div>
 
   <script>
-    // JavaScript to handle the visitor counter
-    document.addEventListener("DOMContentLoaded", function() {
-      let visitorCount = localStorage.getItem("visitorCount");
-
-      // Check if visitorCount exists in local storage, if not set it to 1
-      if (visitorCount === null) {
-        visitorCount = 1;
-      } else {
-        visitorCount = parseInt(visitorCount) + 1;
-      }
-
-      // Display the updated visitor count and save it back to local storage
-      document.getElementById("visitor-count").textContent = visitorCount;
-      localStorage.setItem("visitorCount", visitorCount);
-    });
-
     // JavaScript to handle the page switch
     document.getElementById('entry-image').addEventListener('click', function() {
       document.getElementById('entry-page').style.display = 'none';
